@@ -1,2 +1,2 @@
-# spring-boot-demo（2.2）
-- 入门介绍
+# spring-boot-demo
+- springboot2.2版本入门介绍
