@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="false">
+    <diskStore path = "Java.io.tmpdir"/>
+    <defaultCache
+            eternal="false"
+            maxElementsInMemory="10000"
+            overflowToDisk="false"
+            diskPersistent="false"
+            timeToIdleSeconds="0"
+            timeToLiveSeconds="600"
+            memoryStoreEvictionPolicy="LRU"/>
+<!--    1.缓存的最大数目-->
+<!--    2.内存不足时,是否启用磁盘缓存,如果为true则表示启动磁盘来存储，如果为false则表示不启动磁盘-->
+<!--    3.当缓存存活多少时间销毁（单位是秒，如果我们想设置2分钟的缓存存活时间，那么这个值我们需要设置120-->
+<!--    4.当缓存的内容闲置多少时间销毁-->
+    <cache name="sysCache"
+           maxElementsInMemory="100000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="true"
+           maxElementsOnDisk="10000000"
+           diskPersistent="true"
+           memoryStoreEvictionPolicy="LRU"/>
+
+</ehcache>

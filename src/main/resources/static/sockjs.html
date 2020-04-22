@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>sockjs</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script>
+        // function myClick() {
+        //     alert("myClick....");
+        // }
+        let socket = null;
+        function conn(){
+            if(typeof(WebSocket) == "undefined") {
+                console.log("您的浏览器不支持WebSocket");
+            }else{
+                debugger;
+                console.log("您的浏览器支持WebSocket");
+                //实现化WebSocket对象，指定要连接的服务器地址与端口  建立连接
+                socket = new WebSocket($("#url").val());
+                //打开事件
+                socket.onopen = function() {
+                    console.log("Socket 已打开");
+                    $("#status").html("已连接...");
+                    //socket.send("这是来自客户端的消息" + location.href + new Date());
+                };
+                //获得消息事件
+                socket.onmessage = function(msg) {
+                    console.log(msg.data);
+                    $("#displayMsg").html( $("#displayMsg").html()+"<span style='color: red; '>"+ msg.data +"</span><br>");
+                    //发现消息进入    开始处理前端触发逻辑
+                };
+                //关闭事件
+                socket.onclose = function() {
+                    console.log("Socket已关闭");
+                    $("#status").html("未连接...");
+                    socket = null;
+                };
+                //发生了错误事件
+                socket.onerror = function() {
+                    alert("Socket发生了错误");
+                    //此时可以尝试刷新页面
+                }
+            }
+        }
+
+        function sendMsg() {
+            if(socket == null){
+                alert("未连接");
+                return false;
+            }
+            socket.send($("#txtContent").val());
+        }
+        function closeConn() {
+            $("#status").html("已断开...");
+            socket.close();
+        }
+    </script>
+</head>
+<body>
+连接地址:<input type="text" id="url" style="width:400px;" value="ws://127.0.0.1:8888/websocket/22"></input>
+<button type="button" onclick="conn()">连接</button>
+<button type="button" id="closeConn" onclick="closeConn()">断开</button>
+<div id="status" style="display:inline;">未连接...</div><br><br>
+发送消息:<input type="text" id="txtContent" style="width:400px;"></input>
+<button type="button" onclick="sendMsg()">发送消息</button><br>
+<div>接收到消息:</div>
+<div id="displayMsg" style="color: blue;"></div>
+
+</body>

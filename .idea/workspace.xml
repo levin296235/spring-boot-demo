@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2d5303ea-e818-4c0b-9a39-b215fdc5852b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="E:\IdeaProjects\spring-boot-demo\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/apache-maven-3.6.2" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1asrt64xsMQu3nt3aKVLb1GrbZi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RunManager">
+    <configuration name="SpringBootDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="spring-boot-demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.megvii.springboot.SpringBootDemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2d5303ea-e818-4c0b-9a39-b215fdc5852b" name="Default Changelist" comment="" />
+      <created>1587535353770</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587535353770</updated>
+      <workItem from="1587535357543" duration="4575000" />
+    </task>
+    <task id="LOCAL-00001" summary="git --init">
+      <created>1587536915570</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587536915570</updated>
+    </task>
+    <task id="LOCAL-00002" summary="git --init">
+      <created>1587537390846</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587537390846</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="git --init" />
+    <option name="LAST_COMMIT_MESSAGE" value="git --init" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="166" y="0" key="CommitChangelistDialog2" timestamp="1587537390261">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="166" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587537390261" />
+    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1587540357590">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587540357590" />
+    <state x="531" y="285" key="Github.Dialog.Accounts.Choose" timestamp="1587539570915">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="531" y="285" key="Github.Dialog.Accounts.Choose/0.0.1366.728@0.0.1366.728" timestamp="1587539570915" />
+    <state x="485" y="237" width="420" height="288" key="Github.ShareDialog" timestamp="1587540344823">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="485" y="237" width="420" height="288" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1587540344823" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1587536041525">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587536041525" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1587536041525">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587536041525" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1587536041525">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587536041525" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1587536041525">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587536041525" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1587540270633">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587540270633" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1587540319747">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1587540319747" />
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1587536169828">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587536169828" />
+  </component>
+</project>
