@@ -7,8 +7,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.client.ClientHttpRequest;
-import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -34,7 +32,7 @@ public class RestClientController {
     @RequestMapping(value="/sendFile")
     public String sendFile() throws URISyntaxException, IOException {
         MultiValueMap<String, Object> multiPartBody = new LinkedMultiValueMap<>();
-        multiPartBody.add("file", new ClassPathResource("tmp/test.txt"));
+        multiPartBody.add("file", new ClassPathResource("data/tmp/test.txt"));
         RequestEntity<MultiValueMap<String, Object>> requestEntity = RequestEntity
                 .post(new URI("http://127.0.0.1:8888/uploads/upload1"))
                 .contentType(MediaType.MULTIPART_FORM_DATA)

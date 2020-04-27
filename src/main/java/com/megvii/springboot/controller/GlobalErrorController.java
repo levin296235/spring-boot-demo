@@ -1,7 +1,7 @@
 package com.megvii.springboot.controller;
 
-import com.megvii.springboot.error.ErrorInfo;
-import com.megvii.springboot.error.ErrorInfoBuilder;
+import com.megvii.springboot.exception.ErrorInfo;
+import com.megvii.springboot.exception.ErrorInfoBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.MediaType;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping("${server.error.path:/error}")
+@RequestMapping("/error")
 public class GlobalErrorController implements ErrorController {
 
     @Autowired

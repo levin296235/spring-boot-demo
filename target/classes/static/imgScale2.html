@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图层拖拽</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 2px solid #ccc;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box" id="box"></div>
+
+</body>
+<script>
+
+    var box = document.getElementById("box");
+    box.onmousedown = function(env){
+
+        // 兼容event事件
+        var env = env || window.event;
+
+        // 获取鼠标的坐标
+        var x = env.clientX;
+        var y = env.clientY;
+
+        //  获取元素的坐标
+        var left = box.offsetLeft;
+        var top = box.offsetTop;
+
+        // 获取鼠标在元素中的坐标
+        var x_left = x - left;
+        var y_top = y -top;
+
+        //  鼠标点击后改变颜色
+        box.style.background = "red";
+
+        //  元素的移动事件函数
+        box.onmousemove = function(env){
+
+            // 兼容event事件
+            var env = env || window.event;
+
+            //  获取元素移动时的鼠标的坐标
+            var x = env.clientX;
+            var y = env.clientY;
+
+            //  元素的移动坐标
+            box.style.left = (x - x_left)+"px";
+            box.style.top = (y - y_top)+"px";
+
+        }
+    };
+
+
+    //  鼠标弹出的事件函数
+    box.onmouseup = function(){
+        box.style.background = "skyblue";
+        // 在鼠标弹出后再次调用元素的鼠标移动事件
+        box.onmousemove = function(){};
+
+    };
+
+</script>
+</html>

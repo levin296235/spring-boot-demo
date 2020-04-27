@@ -2,13 +2,112 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d5303ea-e818-4c0b-9a39-b215fdc5852b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_boot_starter_3_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_2_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_43_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_43_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_43_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_43_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_43_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_43_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_3_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_2_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_2_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_2_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_2_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_2_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/config/JedisRedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/config/LettuceRedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/HttpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/ResourceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/SysUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/mapper/SysMenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/mapper/SysRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/mapper/SysUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/model/BaseModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/model/SysMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/model/SysRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/model/SysUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/permit/CustomAccessDeniedHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/permit/RbacPermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/service/SysUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-test.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysMenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysUserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pplication-prod.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/jQuery-1.8.3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/sys_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/SpringBootDemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/SpringBootDemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/config/CacheConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/config/CacheConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/config/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/config/WebSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/config/multipartConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/config/MultipartConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/GlobalErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/GlobalErrorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/RestClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/RestClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/UserInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/error/ErrorInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/exception/ErrorInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/error/ErrorInfoBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/exception/ErrorInfoBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/mapper/UserInfoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/model/UserInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/permit/CustomHandlerInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/permit/CustomHandlerInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/service/UserInfoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/util/CacheUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/megvii/springboot/util/CacheUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ehcache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ehcache.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserInfoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/exception.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/exception.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/megvii/springboot/SpringBootDemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/megvii/springboot/SpringBootDemoApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,14 +140,48 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mapper" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IdeaProjects\spring-boot-demo\src\main\resources\mapper" />
+      <recent name="E:\IdeaProjects\spring-boot-demo\src\main\resources\static\layui" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IdeaProjects\spring-boot-demo\src\main\resources\tmp" />
+      <recent name="E:\IdeaProjects\spring-boot-demo\data\tmp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SpringBootDemoApplication">
+    <configuration name="SpringBootDemoApplicationTests.testInsertUserInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.megvii.springboot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.megvii.springboot" />
+      <option name="MAIN_CLASS_NAME" value="com.megvii.springboot.SpringBootDemoApplicationTests" />
+      <option name="METHOD_NAME" value="testInsertUserInfo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringBootDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-boot-demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.megvii.springboot.SpringBootDemoApplication" />
@@ -56,6 +189,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.SpringBootDemoApplicationTests.testInsertUserInfo" />
+      <item itemvalue="Spring Boot.SpringBootDemoApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SpringBootDemoApplicationTests.testInsertUserInfo" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -79,7 +221,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587535353770</updated>
-      <workItem from="1587535357543" duration="4575000" />
+      <workItem from="1587535357543" duration="5738000" />
+      <workItem from="1587605192074" duration="3250000" />
+      <workItem from="1587613454800" duration="8102000" />
+      <workItem from="1587624416067" duration="939000" />
+      <workItem from="1587625446339" duration="6359000" />
+      <workItem from="1587690028028" duration="6139000" />
+      <workItem from="1587700415421" duration="261000" />
+      <workItem from="1587703518255" duration="1793000" />
+      <workItem from="1587705331833" duration="1791000" />
+      <workItem from="1587707150236" duration="1791000" />
+      <workItem from="1587717202984" duration="861000" />
+      <workItem from="1587718148132" duration="1792000" />
+      <workItem from="1587720009354" duration="622000" />
+      <workItem from="1587723379090" duration="1778000" />
+      <workItem from="1587736510904" duration="104000" />
+      <workItem from="1587736695790" duration="156000" />
+      <workItem from="1587737950817" duration="620000" />
+      <workItem from="1587738646317" duration="3715000" />
+      <workItem from="1587862812915" duration="18597000" />
+      <workItem from="1587894933852" duration="3631000" />
+      <workItem from="1587910017893" duration="6455000" />
+      <workItem from="1587916924770" duration="1095000" />
+      <workItem from="1587949558027" duration="4733000" />
+      <workItem from="1587954315704" duration="711000" />
+      <workItem from="1587956234531" duration="81000" />
     </task>
     <task id="LOCAL-00001" summary="git --init">
       <created>1587536915570</created>
@@ -95,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587537390846</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="初始化">
+      <created>1587540399584</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587540399584</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,13 +276,38 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="git --init" />
-    <option name="LAST_COMMIT_MESSAGE" value="git --init" />
+    <MESSAGE value="初始化" />
+    <option name="LAST_COMMIT_MESSAGE" value="初始化" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="166" y="0" key="CommitChangelistDialog2" timestamp="1587537390261">
+    <state x="275" y="22" key="#Notifications" timestamp="1587954770336">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="166" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587537390261" />
+    <state x="275" y="22" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1587954770336" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587871699552">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1587871699552" />
+    <state x="397" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587896159517">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="397" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1587896159517" />
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1587917479785">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1587917479785" />
+    <state x="357" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587889822248">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="357" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1587889822248" />
+    <state x="166" y="0" key="CommitChangelistDialog2" timestamp="1587956406005">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="166" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1587956406005" />
+    <state width="441" height="466" key="DebuggerActiveHint" timestamp="1587917241102">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="441" height="466" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1587917241102" />
     <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1587540357590">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -122,33 +320,114 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="485" y="237" width="420" height="288" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1587540344823" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1587536041525">
+    <state width="1323" height="139" key="GridCell.Tab.0.bottom" timestamp="1587956406097">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587536041525" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1587536041525">
+    <state width="1323" height="139" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587956406097" />
+    <state width="1323" height="139" key="GridCell.Tab.0.center" timestamp="1587956406097">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587536041525" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1587536041525">
+    <state width="1323" height="139" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587956406097" />
+    <state width="1323" height="139" key="GridCell.Tab.0.left" timestamp="1587956406097">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587536041525" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1587536041525">
+    <state width="1323" height="139" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587956406097" />
+    <state width="1323" height="139" key="GridCell.Tab.0.right" timestamp="1587956406097">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587536041525" />
-    <state x="184" y="6" key="SettingsEditor" timestamp="1587540270633">
+    <state width="1323" height="139" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587956406097" />
+    <state width="1323" height="129" key="GridCell.Tab.1.bottom" timestamp="1587954295235">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587540270633" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1587540319747">
+    <state width="1323" height="129" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587954295235" />
+    <state width="1323" height="129" key="GridCell.Tab.1.center" timestamp="1587954295234">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1587540319747" />
-    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1587536169828">
+    <state width="1323" height="129" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1587954295234" />
+    <state width="1323" height="129" key="GridCell.Tab.1.left" timestamp="1587954295234">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587536169828" />
+    <state width="1323" height="129" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1587954295234" />
+    <state width="1323" height="129" key="GridCell.Tab.1.right" timestamp="1587954295235">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="129" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587954295235" />
+    <state width="1323" height="129" key="GridCell.Tab.2.bottom" timestamp="1587954295235">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="129" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587954295235" />
+    <state width="1323" height="129" key="GridCell.Tab.2.center" timestamp="1587954295235">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="129" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1587954295235" />
+    <state width="1323" height="129" key="GridCell.Tab.2.left" timestamp="1587954295235">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="129" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1587954295235" />
+    <state width="1323" height="129" key="GridCell.Tab.2.right" timestamp="1587954295235">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="129" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1587954295235" />
+    <state x="129" y="55" key="MergeDialog" timestamp="1587954536653">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="129" y="55" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1587954536653" />
+    <state x="392" y="79" key="MultipleFileMergeDialog" timestamp="1587954536662">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="392" y="79" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1587954536662" />
+    <state x="254" y="26" key="Registry" timestamp="1587737996279">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="254" y="26" key="Registry/0.0.1366.728@0.0.1366.728" timestamp="1587737996279" />
+    <state x="184" y="0" key="SettingsEditor" timestamp="1587954290358">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587954290358" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1587954975998">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1587954975998" />
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1587956234982">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587956234982" />
+    <state x="475" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587622516939">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="475" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1587622516939" />
+    <state x="467" y="155" key="git4idea.merge.GitMergeDialog" timestamp="1587540585465">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="467" y="155" key="git4idea.merge.GitMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1587540585465" />
+    <state x="355" y="155" key="git4idea.merge.GitPullDialog" timestamp="1587540456960">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="355" y="155" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1587540456960" />
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1587951068605">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587951068605" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/SysUserController.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/LoginController.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/megvii/springboot/controller/LoginController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

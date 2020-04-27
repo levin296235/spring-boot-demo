@@ -12,7 +12,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String sayHello(){
-        return "hello,springboot2.0!";
+        return "hello," + name;
     }
 
 }

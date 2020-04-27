@@ -3,6 +3,7 @@ import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.tomcat.util.descriptor.web.SecurityCollection;
 import org.apache.tomcat.util.descriptor.web.SecurityConstraint;
+import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
@@ -37,6 +38,13 @@ public class SpringBootDemoApplication {
 			}
 		};
 		tomcat.addAdditionalTomcatConnectors(initiateHttpConnector());
+		tomcat.addConnectorCustomizers(new TomcatConnectorCustomizer() {
+			@Override
+			public void customize(Connector connector) {
+				//Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986
+				connector.setProperty("relaxedQueryChars", "|{}[]");
+			}
+		});
 		return tomcat;
 	}
 
@@ -44,9 +52,10 @@ public class SpringBootDemoApplication {
 	private Connector initiateHttpConnector() {
 		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
 		connector.setScheme("http");
-		connector.setPort(9999);
+		connector.setPort(9000);
 		connector.setSecure(false);
 		connector.setRedirectPort(443);
+		connector.setProperty("relaxedQueryChars", "|{}[]");
 		return connector;
 	}
 
