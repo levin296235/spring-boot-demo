@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>系统用户列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.0/css/bootstrap.css}" />
+</head>
+<body class="container">
+<h1 style="margin-left:450px;margin-top:50px;">系统用户页面</h1>
+<div class="form-group">
+    <div class="col-sm-2 control-label">
+        <a href="/user/toAdd" rel="external nofollow" th:href="@{/user/toAdd}" class="btn btn-info">新增</a>
+    </div>
+</div>
+<div class="with:80%">
+    <table align='center' border='1' cellspacing='0' class="table table-hover">
+        <thead>
+        <tr>
+            <td>#</td>
+            <td>用户名</td>
+            <td>真实姓名</td>
+            <td>性别</td>
+            <td>手机号</td>
+            <td>邮箱</td>
+            <td>创建时间</td>
+            <td>状态</td>
+            <td>编辑</td>
+            <td>删除</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user:${users.records}">
+            <th scope="row" th:text="${user.id}">1</th>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.realName}"></td>
+            <td th:text="${user.gender}"></td>
+            <td th:text="${user.phone}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.createTime}"></td>
+            <!--<td th:text="${user.state}"></td>-->
+            <td th:if="${user.state =='0'}" th:text="锁定"></td>
+            <td th:if="${user.state =='1'}" th:text="正常"></td>
+            <td><a th:href="@{/user/toEdit(id=${user.id})}"  rel="external nofollow">编辑</a></td>
+            <td><a th:href="@{/user/delete(id=${user.id})}" rel="external nofollow">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <br/>
+    <div>
+        <ul class="pagination pagination-lg" >
+            <li><a th:href="@{/user/list}" th:text="首页" th:if="${users.current>1}">[首  页]</a></li>
+            <li><a th:href="@{/user/list(pageNum=${users.current-1})}" th:if="${users.current>1}">[上一页]</a></li>
+            <li><a th:href="@{/user/list(pageNum=${users.current+1})}" th:if="${users.current<users.pages}">[下一页]</a></li>
+            <li><a th:href="@{/user/list(pageNum=${users.pages})}" th:if="${users.current<users.pages}">[尾页]</a></li>
+
+        </ul>
+    </div>
+    <div style="float: right;" th:if="${users.pages>0}">
+        当前第<span th:text="${users.current}"></span>页,共<span
+            th:text="${users.pages}"></span>页,总记录数<span th:text="${users.total}"></span>
+    </div>
+    <!--<table>
+        <tr>
+            <td><a th:href="@{/user/list?pageNum=0}">首页</a></td>
+            <td th:switch="${users.current}">
+                <p th:case="1"> <a th:href="@{/user/list?pageNum=1}">上一页</a></p>
+                <p th:case="*"><a th:href="@{/user/list(pageNum=${users.current-1})}">上一页</a></p>
+            </td>
+            <td th:switch="${users.current}">
+                <p th:case="${users.pages}"><a th:href="@{/user/list(pageNum=${users.pages})}">下一页</a></p>
+                <p th:case="*"><a th:href="@{/user/list(pageNum=${users.current+1})}">下一页</a></p>
+            </td>
+            <td><a th:href="@{/user/list(pageNum=${users.pages})}">尾页</a></td>
+        </tr>
+    </table>-->
+    <!--
+   -->
+
+    </form>
+</div>
+
+</body>
+</html>

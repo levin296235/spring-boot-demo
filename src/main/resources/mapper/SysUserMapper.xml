@@ -2,45 +2,59 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.megvii.springboot.mapper.SysUserMapper">
 
-    <resultMap id="userMap" type="com.megvii.springboot.model.SysUser">
+    <resultMap id="userRetMap" type="com.megvii.springboot.model.SysUser">
         <id property="id" column="id" />
-        <result property="userName" column="user_name"/>
-        <result property="passWord" column="pass_word"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="realName" column="real_name"/>
+        <result property="gender" column="gender"/>
         <result property="phone" column="phone"/>
         <result property="email" column="email"/>
+        <result property="avatar" column="avatar"/>
+        <result property="createTime" column="create_time"/>
+        <result property="lastLoginTime" column="last_login_time"/>
+        <result property="state" column="state"/>
     </resultMap>
     
     <sql id="base_column_list">
-      id,user_name,pass_word,phone,email
+      id,username,password,real_name,gender,phone,email,avatar,create_time,last_login_time,state
     </sql>
 
-    <select id="selectUserList" resultMap="userMap">
+    <select id="selectUserList" resultMap="userRetMap">
         select
         <include refid="base_column_list"></include>
-        from t_user
+        from sys_user
     </select>
 
-    <select id="selectUserById" resultMap="userMap">
+    <select id="selectUserById" resultMap="userRetMap">
         select
         <include refid="base_column_list"></include>
-        from t_user
+        from sys_user
         where id = #{id}
     </select>
 
     <!-- 根据用户名查找用户 -->
-    <select id="selectUserByName" resultMap="userMap">
-		select * from t_user where user_name=#{userName}
+    <select id="selectUserByName" resultMap="userRetMap">
+		select * from sys_user where username=#{username}
 	</select>
 
     <update id="updateUserById" parameterType="com.megvii.springboot.model.SysUser">
-        update t_user set user_name = #{userName}, pass_word = #{passWord},phone = #{phone},email = #{email} where id = #{id}
+        update sys_user set username = #{username}, password = #{password},real_name=#{realName},gender = #{gender},phone = #{phone},email = #{email} where id = #{id}
+
     </update>
 
-    <insert id="insertUser" parameterType="com.megvii.springboot.model.SysUser" keyProperty="id" useGeneratedKeys="true">
-        insert into t_user(user_name,pass_word,phone = #{phone},email = #{email}) values (#{userName},#{passWord},#{phone},#{email})
+<!--    <insert id="insertUser" parameterType="com.megvii.springboot.model.SysUser" keyProperty="id" useGeneratedKeys="true">-->
+<!--        insert into sys_user(id,username,password,real_name,gender,phone,email,create_time) values (#{id},#{username},#{password},#{realName},#{gender},#{phone},#{email},date_format(NOW(), '%Y-%c-%d %h:%i:%s' ))-->
+<!--    </insert>-->
+    <insert id="insertUser" parameterType="com.megvii.springboot.model.SysUser">
+        <selectKey keyProperty="id" resultType="Integer" order="BEFORE">
+            select if(max(id) is null , 1 , max(id) +1) as id from sys_user
+        </selectKey>
+        insert into sys_user(id,username,password,real_name,gender,phone,email,create_time,state) values (#{id},#{username},#{password},#{realName},#{gender},#{phone},#{email},date_format(NOW(), '%Y-%c-%d %h:%i:%s' ),#{state})
     </insert>
 
+
     <delete id="deleteUserById" parameterType="java.lang.Integer">
-        delete from t_user where id = #{id}
+        delete from sys_user where id = #{id}
     </delete>
 </mapper>

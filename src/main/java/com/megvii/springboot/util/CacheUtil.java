@@ -11,25 +11,25 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class CacheUtil {
 
-    @Cacheable(value = "userInfo", key = "#userInfo.name")
+    @Cacheable(value = "sysUser", key = "#sysUser.username")
     public SysUser getUser(SysUser user){
         log.info("get user");
         return user;
     }
 
-    @CachePut(value = "userInfo", key = "#userInfo.name")
+    @CachePut(value = "sysUser", key = "#sysUser.username")
     public SysUser saveUser(SysUser user){
         log.info("save user");
         return user;
     }
 
-    @CacheEvict(value = "userInfo", key = "#name")//移除指定key的数据
+    @CacheEvict(value = "sysUser", key = "#username")//移除指定key的数据
     public SysUser deleteUser(SysUser user){
         log.info("delete user");
         return user;
     }
 
-    @CacheEvict(value = "userInfo", allEntries = true)//移除所有数据
+    @CacheEvict(value = "sysUser", allEntries = true)//移除所有数据
     public SysUser deleteAll(SysUser user){
         log.info("deleteAll user");
         return user;

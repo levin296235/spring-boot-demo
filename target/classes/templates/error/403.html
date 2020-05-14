@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>没有权限</title>
+</head>
+<body>
+<h1 th:inline="text">抱歉!</h1>
+<p>您没有权限访问该页面 -------这是403界面.</p>
+<p><a th:href="@{/home/homeUser}">前往普通用户界面</a></p>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="退出登录"/>
+</form>
+</body>
+</html>

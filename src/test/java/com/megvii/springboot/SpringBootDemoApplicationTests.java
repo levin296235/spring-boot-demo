@@ -4,13 +4,19 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.megvii.springboot.mapper.SysUserMapper;
 import com.megvii.springboot.model.SysUser;
+import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
@@ -23,6 +29,9 @@ import java.net.URI;
 import java.util.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureMockMvc
+@ExtendWith(SpringExtension.class)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class SpringBootDemoApplicationTests {
 
 	@Autowired
@@ -58,7 +67,7 @@ class SpringBootDemoApplicationTests {
 	private SysUserMapper userInfoMapper;
 
 	@Test
-	public void testPageueryUserInfo() {
+	public void testPageSysUser() {
 		Page<SysUser> page = userInfoMapper.selectPage(new Page<>(1,5), new QueryWrapper<SysUser>().eq("sex", "男"));
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + page.toString());
 
@@ -108,7 +117,7 @@ class SpringBootDemoApplicationTests {
 		for(int i=10; i < 19; i++){
 			SysUser u = new SysUser();
 			u.setId(i);
-			u.setUserName("liming" + i);
+			u.setUsername("liming" + i);
 			boolean flag = userInfoMapper.insertUser(u);
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + flag);
 		}
@@ -150,10 +159,17 @@ class SpringBootDemoApplicationTests {
 	public void testSerializable() {
 		SysUser user=new SysUser();
 		user.setId(1);
-		user.setUserName("朝雾轻寒");
+		user.setUsername("朝雾轻寒");
 		user.setPhone("13905535621");
 		serializableRedisTemplate.opsForValue().set("user", user);
 		SysUser user2 = (SysUser) serializableRedisTemplate.opsForValue().get("user");
 //		System.out.println("user:"+user2.getId()+","+user2.getUserName()+","+user2.getSex());
+	}
+	@Test
+	public void testBCrypt(){
+		String hashpw = BCrypt.hashpw("123456",BCrypt.gensalt());
+		System.out.println(hashpw);
+//		boolean checkpw = BCrypt.checkpw("123456","");
+//		System.out.println(checkpw);
 	}
 }

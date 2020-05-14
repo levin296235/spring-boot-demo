@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>登录页面</title>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all">
-    <link rel="stylesheet" th:href="@{/css/login.css}" media="all">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>登陆</title>
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.0/css/bootstrap.css}" />
+    <!-- jQuery文件。务必在bootstrap.js 之前引入 -->
+    <script th:src="@{/webjars/jquery/3.5.0/jquery.js}"></script>
+    <script th:src="@{/webjars/popper.js/2.0.2/umd/popper.js}"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script th:src="@{/webjars/bootstrap/4.3.0/js/bootstrap.js}"></script>
 </head>
 <body>
-<div class="login-main">
-    <h1 class="layui-elip">Spring Security 集成演示系统</h1>
-    <form class="layui-form" action="/login" method="post">
-        <div class="layui-input-inline">
-            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-            <input type="text" name="userName" required
-                   placeholder="用户名" autocomplete="off" class="layui-input">
+    <!-- 登录表单 -->
+    <h1 style="margin-left:550px;margin-top:50px;">登录页面</h1>
+    <div style="margin-left:550px;margin-top:10px;color: red" th:if="${param.error}">
+        用户名密码错误，要不去<a th:href="@{/home}">首页</a>看看？
+    </div>
+    <div style="margin-left:550px;margin-top:10px;" th:if="${param.logout}">
+        <label style="color: red;">您已经登出</label>
+    </div>
+    <form style="margin-left:500px;margin-top:20px;" th:action="@{/login}" method="post">
+        <div class="form-group">
+            <label for="user" stype="display:inline;">账户：</label>
+            <input type="text" name="username" class="form-control" id="user" style="display:inline;width:200px;"autocomplete="off" />
         </div>
-        <div class="layui-input-inline">
-            <input type="password" name="passWord" required  placeholder="密码" autocomplete="off"
-                   class="layui-input">
+        <div class="form-group">
+            <label for="password" style="display:inline;">密码：</label>
+            <input type="password" name="password" class="form-control" id="password" style="display:inline;width:200px;"autocomplete="off" />
         </div>
-        <div class="layui-input-inline login-btn">
-            <button id="btnLogin" lay-submit lay-filter="*" class="layui-btn">登录</button>
+        <div class="checkbox">
+            <label><input type="checkbox" name="remember-me" id="remember-me" value="">记住</label>
         </div>
-        <div class="form-message">
-            <label th:text="${error}"></label>
-            <label th:text="${msg}"></label>
-        </div>
+        <button type="submit" class="btn btn-primary" >登录</button>
+<!--        <button type="submit" class="btn btn-primary" onclick="login()">登录</button>-->
+<!--        <button type="submit" class="btn btn-primary" onclick="register()">注册</button>-->
     </form>
-</div>
-<script type="text/javascript" th:src="@{/layui/layui.js}"></script>
-<script type="text/javascript">
-    layui.use('form', function() {
-        var form = layui.form;
-    });
-</script>
+
 </body>
 </html>

@@ -19,7 +19,7 @@ public class GlobalErrorController implements ErrorController {
     @Autowired
     private ErrorInfoBuilder errorInfoBuilder;//错误信息的构建工具.
 
-    private final static String DEFAULT_ERROR_VIEW = "error";//错误信息页
+    private final static String DEFAULT_ERROR_VIEW = "error/error";//错误信息页
 
     /**
      * 情况1：若预期返回类型为text/html,则返回错误信息页(View).

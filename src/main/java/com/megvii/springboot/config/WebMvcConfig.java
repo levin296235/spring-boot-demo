@@ -3,15 +3,14 @@ package com.megvii.springboot.config;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import com.megvii.springboot.permit.ContextListener;
 import com.megvii.springboot.permit.CustomHandlerInterceptor;
-import com.megvii.springboot.permit.MyFilter;
+import com.megvii.springboot.permit.CustomListener;
+import com.megvii.springboot.permit.CustomFilter;
 import org.apache.catalina.filters.RemoteIpFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.Ordered;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -30,37 +29,35 @@ import java.util.Map;
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
+    //拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //需要配置2：----------- 告知拦截器：/static/admin/** 与 /static/user/** 不需要拦截 （配置的是 路径）
-        registry.addInterceptor(new CustomHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/static/**","/user/login/**","/login/**","/welcome/**","/error/**","/lib/layui/**");
+        registry.addInterceptor(new CustomHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/static/**","/webjars/**","/login/**","/home/**","/error/**");
     }
 
+    //静态资源处理器
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //可以通过http://127.0.0.1:8080/web/home.html访问resources/web/home.html页面
-//        registry.addResourceHandler("/web/**").addResourceLocations("classpath:/web/");
-//        registry.addResourceHandler("/statics/**").addResourceLocations("classpath:/statics/");//静态资源路径 css,js,img等
-//        registry.addResourceHandler("/templates/**").addResourceLocations("classpath:/templates/");//视图
-//        registry.addResourceHandler("/mapper/**").addResourceLocations("classpath:/mapper/");//mapper.xml
+        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");//静态资源路径 css,js,img等
+        registry.addResourceHandler("/templates/**").addResourceLocations("classpath:/templates/");//视图
+        registry.addResourceHandler("/mapper/**").addResourceLocations("classpath:/mapper/");//mapper.xml
+        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/webjars/");
+        registry.addResourceHandler("/webjars/**") .addResourceLocations("classpath:/META-INF/resources/webjars/");
+
     }
 
-    /**
-     * 视图控制器配置
-     */
+    //视图控制器配置
     @Override
     public void addViewControllers(ViewControllerRegistry registry){
-//        registry.addViewController("/login").setViewName("web/login.html");
-        registry.addViewController("/").setViewName("sys_user");//设置默认跳转视图为 /index
-        registry.addViewController("/error/500").setViewName("/error/500");
-        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+        registry.addViewController("/").setViewName("redirect:/login");
+        registry.addViewController("/login").setViewName("login");//设置默认跳转视图为 /index
+        registry.addViewController("/home").setViewName("home");//设置默认跳转视图为 /index
 
-//        super.addViewControllers(registry);
     }
 
-    /**
-     * 视图解析器配置  控制controller String返回的页面    视图跳转控制
-     */
+   //视图解析器配置  控制controller String返回的页面视图跳转控制
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         // registry.viewResolver(new InternalResourceViewResolver("/jsp/", ".jsp"));
@@ -71,11 +68,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
         return new RemoteIpFilter();
     }
 
+    //过滤器
     @Bean
     public FilterRegistrationBean testFilterRegistration() {
 
         FilterRegistrationBean registration = new FilterRegistrationBean();
-        registration.setFilter(new MyFilter());
+        registration.setFilter(new CustomFilter());
         registration.addUrlPatterns("/*");
         registration.addInitParameter("paramName", "paramValue");
         registration.setName("MyFilter");
@@ -83,13 +81,15 @@ public class WebMvcConfig implements WebMvcConfigurer {
         return registration;
     }
 
+    //监听器
     @Bean
     public ServletListenerRegistrationBean servletListenerRegistrationBean() {
         ServletListenerRegistrationBean slrBean = new ServletListenerRegistrationBean();
-        slrBean.setListener(new ContextListener());
+        slrBean.setListener(new CustomListener());
         return slrBean;
     }
 
+    //跨域cors过滤器
     @Bean
     public CorsFilter corsFilter() {
         //1.添加CORS配置信息
@@ -113,11 +113,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         return new CorsFilter(configSource);
     }
 
-    /**
-     * 消息内容转换配置
-     * 配置fastJson返回json转换
-     * @param converters
-     */
+    //消息内容转换配置，配置fastJson返回json转换
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         //创建fastJson消息转换器

@@ -3,9 +3,11 @@ package com.megvii.springboot.model;
 import lombok.Data;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 @Data
 @ToString
-public class SysRole extends BaseModel{
+public class SysRole implements Serializable {
 
     private Integer id;
 

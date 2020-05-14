@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>登陆</title>
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.css">
+    <!-- jQuery文件。务必在bootstrap.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.js"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.js"></script>
+</head>
+<body style="padding-left: 20px;">
+<h3><strong>1.实现原理</strong></h3>
+Bootstrap框架中的网格系统就是将容器平分成12份。
+
+<h3><strong>2.工作原理</strong></h3>
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1,
+针对不同的浏览器分辨率，宽度也不一样：自动、750px、970px和1170px
+1、数据行(.row)必须包含在容器（.container）中，以便为其赋予合适的对齐方式和内距(padding)。
+2、在行(.row)中可以添加列(.column)，但列数之和不能超过平分的总列数，比如12。
+3、具体内容应当放置在列容器（column）之内，而且只有列（column）才可以作为行容器(.row)的直接子元素
+4、通过设置内距（padding）从而创建列与列之间的间距。然后通过为第一列和最后一列设置负值的外距（margin）来抵消内距(padding)的影响
+<style>
+    [class *= col-]{
+        background-color: #eee;
+        border: 1px solid #ccc;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-8">.col-md-8</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4">.col-md-4</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">.col-md-3</div>
+        <div class="col-md-6">.col-md-6</div>
+        <div class="col-md-3">.col-md-3</div>
+    </div>
+</div>
+
+<h3><strong>3.列偏移</strong></h3>
+只需要在列元素上添加类名“col-md-offset-*”(其中星号代表要偏移的列组合数)，那么具有这个类名的列就会向右偏移。例如，你在列元素上添加“col-md-offset-4”，表示该列向右移动4个列的宽度。
+要保证列与偏移列的总数不超过12，不然会致列断行显示
+<div class="container">
+    <h4>列向右移动四列的间距</h4>
+    <div class="row">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-2 col-md-offset-4">列向右移动四列的间距</div>
+        <div class="col-md-2">.col-md-3</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4 col-md-offset-4">列向右移动四列的间距</div>
+    </div>
+</div>
+<br />
+<h4>发生行断裂</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-2 col-md-offset-4">列向右移动四列的间距</div>
+        <div class="col-md-2">.col-md-3</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4 col-md-offset-4">列向右移动四列的间距</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">.col-md-3</div>
+        <div class="col-md-3 col-md-offset-3">col-md-offset-3</div>
+        <div class="col-md-4">col-md-4</div>
+    </div>
+</div>
+
+<h3><strong>4.列排序</strong></h3>
+列排序其实就是改变列的方向，就是改变左右浮动，并且设置浮动的距离。在Bootstrap框架的网格系统中是通过添加类名“col-md-push-*”和“col-md-pull-*” (其中星号代表移动的列组合数)。
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-push-8">.col-md-4</div>
+        <div class="col-md-8 col-md-pull-4">.col-md-8</div>
+    </div>
+</div>
+
+<h3><strong>5.列的嵌套</strong></h3>
+<style>
+    [class *= col-]{
+        background-color: #eee;
+        border: 1px solid #ccc;
+    }
+    [class *= col-] [class *= col-] {
+        background-color: #f36;
+        border:1px dashed #fff;
+        color: #fff;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            我的里面嵌套了一个网格
+            <div class="row">
+                <div class="col-md-6">col-md-6</div>
+                <div class="col-md-6">col-md-6</div>
+            </div>
+        </div>
+        <div class="col-md-4">col-md-4</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-8">
+            我的里面嵌套了一个网格
+            <div class="row">
+                <div class="col-md-4">col-md-4</div>
+                <div class="col-md-4">col-md-4</div>
+                <div class="col-md-4">col-md-4</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

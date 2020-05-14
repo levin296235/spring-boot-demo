@@ -11,6 +11,6 @@ public class LogEventListener implements ApplicationListener<LogSaveEvent> {
     @Async
     @Override
     public void onApplicationEvent(LogSaveEvent logSaveEvent) {
-        log.info("LogEventListener:"+logSaveEvent.getLogPojo().getLogName());
+        log.info("LogEventListener:" + logSaveEvent.getLogPojo().getLogName());
     }
 }

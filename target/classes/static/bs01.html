@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>bootstrap基础学习（一）</title>
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.css">
+    <!-- jQuery文件。务必在bootstrap.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.js"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.js"></script>
+</head>
+
+<body style="padding-left:20px;">
+    <strong> 1、标题</strong>
+    <div class="h1">Bootstrap标题一</div>
+    <strong>2 副标题small标签<strong>
+        <h1>Bootstrap标题一<small>我是副标题</small></h1>
+        <strong>3 段落P</strong>
+        <p>我是一个普通的段落</p>
+        <!--4 强调内容除此之外，Bootstrap还通过元素标签:<small>、<strong>、<em>和<cite>给文本做突出样式处理。-->
+        <strong>4 强调内容除此之外，Bootstrap还通过元素标签:small、strong、em和cite给文本做突出样式处理。</strong>
+        <p class="lead">这部分内容需要特别强调，我和别人长得不一样</p>
+        <p class="small">这部分内容需要特别强调，我和别人长得不一样</p>
+        <!--5 粗体-->
+        <strong>5 粗体</strong>
+        <p>我在学习<strong>Bootstrap</strong>，我要掌握<strong>Bootstrap</strong>的所有知识。</p>
+        <!--6 斜体-->
+        <strong>6 斜体</strong>
+        <p>我正在学习<i>Bootstrap</i>。我发现<i>Bootstrap</i>真的好强大。</p>
+        <!--7 强调相关的类-->
+        <strong>7 强调相关的类</strong>
+        <div class="text-muted">.text-muted 效果 .text-muted：提示，使用浅灰色（#999）</div>
+        <div class="text-primary">.text-primary效果 .text-primary：主要，使用蓝色（#428bca）</div>
+        <div class="text-success">.text-success效果 .text-success：成功，使用浅绿色(#3c763d)</div>
+        <div class="text-info">.text-info效果 .text-info：通知信息，使用浅蓝色（#31708f）</div>
+        <div class="text-warning">.text-warning效果 .text-warning：警告，使用黄色（#8a6d3b）</div>
+        <div class="text-danger">.text-danger效果 .text-danger：危险，使用褐色（#a94442）</div>
+        <!--8 文本对齐风格-->
+        <strong>8 文本对齐风格</strong>
+        <p class="text-left">我居左</p>
+        <p class="text-center">我居中</p>
+        <p class="text-right">我居右</p>
+        <p class="text-justify">我两端对齐</p>
+        <!--9 列表 六种   （普通列表 、有序列表 、去点列表  、内联列表  、描述列表 、水平描述列表）-->
+        <strong>9 列表 六种   （普通列表 、有序列表 、去点列表  、内联列表  、描述列表 、水平描述列表）</strong>
+        <h5>普通列表</h5>
+        <ul>
+            <li>列表项目</li>
+            <li>列表项目</li>
+        </ul>
+        <h5>有序列表</h5>
+        <ol>
+            <li>项目列表一</li>
+            <li>项目列表二</li>
+        </ol>
+        <h5>有序列表嵌套</h5>
+        <ol>
+            <li>有序列表</li>
+            <li>
+                有序列表
+                <ol>
+                    <li>有序列表(2)</li>
+                    <li>有序列表(2)</li>
+                </ol>
+            </li>
+            <li>有序列表</li>
+        </ol>
+        <!--10 去点列表-->
+        <strong>10 去点列表</strong>
+        <ul class="list-unstyled">
+            <li>不带项目符号</li>
+            <li>不带项目符号</li>
+        </ul>
+        <!--11 内联列表-->
+        <strong>11 内联列表</strong>
+        城市：
+        <ul class="list-inline">
+            <li>北京</li>
+            <li>上海</li>
+            <li>南京</li>
+            <li>厦门</li>
+        </ul>
+        <!--12 定义列表-->
+        <strong>12 定义列表 Bootstrap并没有做太多的调整，只是调整了行间距，外边距和字体加粗效果</strong>
+        <dl>
+            <dt>北京</dt>
+            <dd>北京是中国的首都，是政治文化集中地</dd>
+            <dt>上海</dt>
+            <dd>上海号称东方的巴黎</dd>
+        </dl>
+        <!--13 水平定义列表-->
+        <strong>13 水平定义列表 Bootstrap可以给dl添加类名“.dl-horizontal”给定义列表实现水平显示效果。只有屏幕大于768px的时候，添加类名“.dl-horizontal”才具有水平定义列表效果</strong>
+        <dl  class="dl-horizontal">
+            <dt>北京</dt>
+            <dd>北京是中国的首都，是政治文化集中地</dd>
+            <dt>上海</dt>
+            <dd>上海号称东方的巴黎</dd>
+        </dl>
+        <!--14 代码-->
+        <strong>14 代码1、code：一般是针对于单个单词或单个句子的代码2、pre：一般是针对于多行代码（也就是成块的代码）3、kbd:一般是表示用户要通过键盘输入的内容</strong>
+        code风格：
+        <div>Bootstrap的代码风格有三种：<code>&lt;code&gt;</code>、<code>&lt;pre&gt;</code>和<code>&lt;kbd&gt;</code></div>
+        pre风格：
+        <div>
+            <pre>
+            &lt;ul&gt;
+            &lt;li&gt;...&lt;/li&gt;
+            &lt;li&gt;...&lt;/li&gt;
+            &lt;li&gt;...&lt;/li&gt;
+            &lt;/ul&gt;
+            </pre>
+        </div>
+        kbd风格：
+        <div>请输入<kbd>ctrl+c</kbd>来复制代码，然后使用<kbd>ctrl+v</kbd>来粘贴代码</div>
+        <strong>15 代码（二）高度超出340px，就会在Y轴出现滚动条</strong>
+        <pre class="pre-scrollable">
+            <ol>
+                <li>....</li>
+                <li>....</li>
+                <li>....</li>
+                <li>....</li>
+                <li>....</li>
+                <li>....</li>
+                <li>....</li>
+                <li>....</li>
+                <li>....</li>
+                <li>....</li>
+                <li>....</li>
+                <li>....</li>
+                <li>....</li>
+                <li>....</li>
+            </ol>
+            </pre>
+        <strong>16 表格  <br />
+            ☑ .table：基础表格<br />
+            ☑  .table-striped：斑马线表格<br />
+            ☑  .table-bordered：带边框的表格<br />
+            ☑  .table-hover：鼠标悬停高亮的表格 <br />
+            ☑  .table-condensed：紧凑型表格<br />
+            ☑  .table-responsive：响应式表格</strong>
+        <h1>基础表格</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>表格标题</th>
+                <th>表格标题</th>
+                <th>表格标题</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            </tbody>
+        </table>
+        <h1>斑马线表格</h1>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>表格标题</th>
+                <th>表格标题</th>
+                <th>表格标题</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            </tbody>
+        </table>
+        <h1>带边框的表格</h1>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>表格标题</th>
+                <th>表格标题</th>
+                <th>表格标题</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            </tbody>
+        </table>
+        <h1>鼠标悬浮高亮的表格</h1>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>表格标题</th>
+                <th>表格标题</th>
+                <th>表格标题</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            </tbody>
+        </table>
+        <h1>紧凑型表格</h1>
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>表格标题</th>
+                <th>表格标题</th>
+                <th>表格标题</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            </tbody>
+        </table>
+        <h1>响应式表格</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>表格标题</th>
+                    <th>表格标题</th>
+                    <th>表格标题</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>表格单元格</td>
+                    <td>表格单元格</td>
+                    <td>表格单元格</td>
+                </tr>
+                <tr>
+                    <td>表格单元格</td>
+                    <td>表格单元格</td>
+                    <td>表格单元格</td>
+                </tr>
+                <tr>
+                    <td>表格单元格</td>
+                    <td>表格单元格</td>
+                    <td>表格单元格</td>
+                </tr>
+                <tr>
+                    <td>表格单元格</td>
+                    <td>表格单元格</td>
+                    <td>表格单元格</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <strong>17 表格行的类 注意要实现悬浮状态，需要在<table>标签上加入table-hover类 </strong>
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>类名</th>
+                <th>描述</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="active">
+                <td>.active</td>
+                <td>表示当前活动的信息</td>
+            </tr>
+            <tr class="success">
+                <td>.success</td>
+                <td>表示成功或者正确的行为</td>
+            </tr>
+            <tr class="info">
+                <td>.info</td>
+                <td>表示中立的信息或行为</td>
+            </tr>
+            <tr class="warning">
+                <td>.warning</td>
+                <td>表示警告，需要特别注意</td>
+            </tr>
+            <tr class="danger">
+                <td>.danger</td>
+                <td>表示危险或者可能是错误的行为</td>
+            </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

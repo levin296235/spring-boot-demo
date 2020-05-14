@@ -3,6 +3,7 @@ import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.tomcat.util.descriptor.web.SecurityCollection;
 import org.apache.tomcat.util.descriptor.web.SecurityConstraint;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
@@ -12,6 +13,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SpringBootDemoApplication {
+
+	//如果没有使用默认值8086
+	@Value("${http.port}")
+	Integer httpPort;
+
+	//正常启用的https端口 如443
+	@Value("${server.port}")
+	Integer httpsPort;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDemoApplication.class, args);
@@ -52,9 +61,9 @@ public class SpringBootDemoApplication {
 	private Connector initiateHttpConnector() {
 		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
 		connector.setScheme("http");
-		connector.setPort(9000);
+		connector.setPort(httpPort);
 		connector.setSecure(false);
-		connector.setRedirectPort(443);
+		connector.setRedirectPort(httpsPort);
 		connector.setProperty("relaxedQueryChars", "|{}[]");
 		return connector;
 	}

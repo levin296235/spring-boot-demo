@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>user</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.0/css/bootstrap.css}" />
+    <style>
+        /*web background*/
+        .container{
+            display:table;
+            height:100%;
+        }
+
+        .row{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        /* centered columns styles */
+        .row-centered {
+            text-align:center;
+        }
+        .col-centered {
+            display:inline-block;
+            float:none;
+            text-align:left;
+            margin-right:-4px;
+        }
+    </style>
+</head>
+<body>
+<br/>
+<div class="container">
+    <h1 >添加用户</h1>
+    <form class="form-horizontal"  th:action="@{/user/add}" method="post">
+        <div class="form-group">
+            <div class="col-sm-4">
+                <label for="userName" class="col-sm-4 control-label">用户名</label>
+                <input type="text" class="form-control" name="username" id="userName" placeholder="请输入用户名"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label" >密码</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" name="password" id="password" placeholder="请输入密码"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="realName" class="col-sm-2 control-label">真实姓名</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="realName" id="realName" placeholder="请输入真实姓名"/>
+            </div>
+        </div>
+        <div class="radio">
+            <label  class="col-sm-1 control-label">性别</label>
+            <label>
+                <input type="radio" name="gender" id="gender1" value="男" checked>
+                男
+            </label>
+            <label>
+                <input type="radio" name="gender" id="gender2" value="女">
+                女
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="phone" class="col-sm-2 control-label">手机号</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入手机号"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">邮箱</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="email" id="email" placeholder="请输入邮箱"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">状态</label>
+            <div class="col-sm-4">
+                <select name="state" class="form-control">
+                    <option value="1">正常</option>
+                    <option value="0">锁定</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="提交" class="btn btn-info" />
+                <input type="reset" value="重置" class="btn btn-info" />
+                <a href="/user/list" th:href="@{/user/list}" class="btn btn-info">返回</a>
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>

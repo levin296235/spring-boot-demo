@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>bootstrap基础学习【菜单、按钮、导航】（四）</title>
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.css">
+    <!-- jQuery文件。务必在bootstrap.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.js"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.js"></script>
+</head>
+<body style="padding-left: 20px;">
+<h3><strong>1.下拉菜单（基本用法）</strong></h3>
+1、使用一个名为“dropdown”的容器包裹了整个下拉菜单元素，示例中为:
+div class="dropdown" /div<br>
+2、使用了一个 button 按钮做为父菜单，并且定义类名“dropdown-toggle”和自定义“data-toggle”属性，且值必须和最外容器类名一致，此示例为:
+data-toggle="dropdown"<br>
+3、下拉菜单项使用一个ul列表，并且定义一个类名为“dropdown-menu”，此示例为:ul class="dropdown-menu"
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        下拉菜单
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+    </ul>
+</div>
+
+<h3><strong>2.下拉菜单（下拉分割线）</strong></h3>
+下拉分隔线，假设下拉菜单有两个组，那么组与组之间可以通过添加一个空的 li ，
+并且给这个 li 添加类名“divider”来实现添加下拉分隔线的功能
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        下拉菜单
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+    </ul>
+</div>
+
+<h3><strong>3.下拉菜单（菜单标题）</strong></h3>
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        下拉菜单
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation" class="dropdown-header">第一部分菜单头部</li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation" class="dropdown-header">第二部分菜单头部</li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+    </ul>
+</div>
+
+<div class="clearfix"></div>
+<h3><strong>4.下拉菜单（对齐方式）</strong></h3>
+<style>
+    .dropdown{
+        float: left;
+    }
+</style>
+<h4>使用pull-right类使下拉菜单与父容器右边对齐</h4><br>
+Bootstrap框架中下拉菜单默认是左对齐，如果你想让下拉菜单相对于父容器右对齐时，<br />
+可以在“dropdown-menu”上添加一个“pull-right”或者“dropdown-menu-right”类名，<br />
+“pull-right”类可以用“dropdown-menu-right”代替，两个类的作用是一样的<br/>
+同时一定要为.dropdown添加float:left css样式。
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        下拉菜单
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+    </ul>
+</div>
+<br />
+<br />
+<h4>使用dropdown-menu-right类使下拉菜单与父容器右边对齐</h4>
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        下拉菜单
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+    </ul>
+</div>
+<br />
+<br />
+<h4>下拉菜单与父容器左边对齐</h4>
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        下拉菜单
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+    </ul>
+</div>
+
+
+<div class="clearfix"></div>
+<h3><strong>5.下拉菜单（菜单项状态）</strong></h3>
+当前状态（.active）和禁用状态（.disabled）。这两种状态使用方法只需要在对应的菜单项上添加对应的类名
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        下拉菜单
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+    </ul>
+</div>
+
+<div class="clearfix"></div>
+<h3><strong>6.按钮（按钮组）</strong></h3>
+“.btn-group”容器里的标签元素需要带有类名“.btn”
+<div class="btn-group">
+    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-backward"></span></button>
+    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-fast-backward"></span></button>
+    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-backward"></span></button>
+    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-play"></span></button>
+    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pause"></span></button>
+    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-stop"></span></button>
+    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-forward "></span></button>
+    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-fast-forward"></span></button>
+    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-forward"></span></button>
+</div>
+
+<h3><strong>7.按钮（按钮工具栏）</strong></h3>
+将按钮组“btn-group”按组放在一个大的容器“btn-toolbar”中<br>
+☑  .btn-group-lg:大按钮组<br>
+☑  .btn-group-sm:小按钮组<br>
+☑  .btn-group-xs:超小按钮组<br>
+只需要在“.btn-group”类名上追加对应的类名，就可以得到不同大小的按钮组
+<div class="btn-toolbar">
+    <div class="btn-group">
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-justify"></span></button>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-indent-left"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-indent-right"></span></button>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-font"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bold"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-italic"></span></button>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-height"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-width"></span></button>
+    </div>
+</div>
+<br />
+<br />
+<div class="btn-toolbar">
+    <div class="btn-group btn-group-lg">
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-justify"></span></button>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-indent-left"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-indent-right"></span></button>
+    </div>
+    <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-font"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bold"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-italic"></span></button>
+    </div>
+    <div class="btn-group btn-group-xs">
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-height"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-width"></span></button>
+    </div>
+</div>
+
+<h3><strong>8.按钮（嵌套分组）</strong></h3>
+<div class="btn-group">
+    <button class="btn btn-default" type="button">首页</button>
+    <button class="btn btn-default" type="button">产品展示</button>
+    <button class="btn btn-default" type="button">案例分析</button>
+    <button class="btn btn-default" type="button">联系我们</button>
+    <div class="btn-group">
+        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">关于我们<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="##">公司简介</a></li>
+            <li><a href="##">企业文化</a></li>
+            <li><a href="##">组织结构</a></li>
+            <li><a href="##">客服服务</a></li>
+        </ul>
+    </div>
+</div>
+
+<h3><strong>9.按钮（垂直分组）</strong></h3>
+只需要把水平分组的“btn-group”类名换成“btn-group-vertical”即可<br>
+<div class="btn-group-vertical">
+    <button class="btn btn-default" type="button">首页</button>
+    <button class="btn btn-default" type="button">产品展示</button>
+    <button class="btn btn-default" type="button">案例分析</button>
+    <button class="btn btn-default" type="button">联系我们</button>
+    <div class="btn-group">
+        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">关于我们<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="##">公司简介</a></li>
+            <li><a href="##">企业文化</a></li>
+            <li><a href="##">组织结构</a></li>
+            <li><a href="##">客服服务</a></li>
+        </ul>
+    </div>
+</div>
+
+<h3><strong>10.按钮（等分按钮）</strong></h3>
+移动端上特别的实用，只需要在按钮组“btn-group”上追加一个“btn-group-justified”类名，
+在制作等分按钮组时，请尽量使用a标签元素来制作按钮，因为使用button标签元素时，使用display:table在部分浏览器下支持并不友好
+<div class="btn-wrap">
+    <div class="btn-group btn-group-justified">
+        <a class="btn btn-default" href="#">首页</a>
+        <a class="btn btn-default" href="#">产品展示</a>
+        <a class="btn btn-default" href="#">案例分析</a>
+        <a class="btn btn-default" href="#">联系我们</a>
+    </div>
+</div>
+
+<h3><strong>11.按钮下拉菜单</strong></h3>
+<div class="btn-group">
+    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">按钮下拉菜单<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a href="##">按钮下拉菜单项</a></li>
+        <li><a href="##">按钮下拉菜单项</a></li>
+        <li><a href="##">按钮下拉菜单项</a></li>
+        <li><a href="##">按钮下拉菜单项</a></li>
+    </ul>
+</div>
+
+<h3><strong>12.按钮的向下向上三角形、向上弹起的下拉菜单</strong></h3>
+实现方法：需要在“.btn-group”类上追加“dropup”类名（这也是做向上弹起下拉菜单要用的类名）。
+<div class="btn-group  dropup">
+    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">按钮下拉菜单<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a href="##">按钮下拉菜单项</a></li>
+        <li><a href="##">按钮下拉菜单项</a></li>
+        <li><a href="##">按钮下拉菜单项</a></li>
+        <li><a href="##">按钮下拉菜单项</a></li>
+    </ul>
+</div>
+
+<h3><strong>13.导航(基础样式)</strong></h3>
+Bootstrap框架中制作导航条主要通过“.nav”样式。默认的“.nav”样式不提供默认的导航样式，必须附加另外一个样式才会有效，比如“nav-tabs”、“nav-pills”之类
+<ul class="nav nav-tabs">
+    <li><a href="##">Home</a></li>
+    <li><a href="##">CSS3</a></li>
+    <li><a href="##">Sass</a></li>
+    <li><a href="##">jQuery</a></li>
+    <li><a href="##">Responsive</a></li>
+</ul>
+
+<h3><strong>14.标签形(tab)导航（选项卡导航）</strong></h3>
+<ul class="nav nav-tabs">
+    <li><a href="##">Home</a></li>
+    <li><a href="##">CSS3</a></li>
+    <li><a href="##">Sass</a></li>
+    <li><a href="##">jQuery</a></li>
+    <li><a href="##">Responsive</a></li>
+</ul>
+<br />
+<ul class="nav nav-tabs">
+    <li class="active"><a href="##">Home</a></li>
+    <li><a href="##">CSS3</a></li>
+    <li><a href="##">Sass</a></li>
+    <li><a href="##">jQuery</a></li>
+    <li><a href="##">Responsive</a></li>
+</ul>
+<br />
+<ul class="nav nav-tabs">
+    <li class="active"><a href="##">Home</a></li>
+    <li><a href="##">CSS3</a></li>
+    <li><a href="##">Sass</a></li>
+    <li><a href="##">jQuery</a></li>
+    <li class="disabled"><a href="##">Responsive</a></li>
+</ul>
+
+<h3><strong>15.导航（胶囊形(pills)导航）</strong></h3>
+只需要把类名“nav-tabs”换成“nav-pills”即可
+<ul class="nav nav-pills">
+    <li class="active"><a href="##">Home</a></li>
+    <li><a href="##">CSS3</a></li>
+    <li><a href="##">Sass</a></li>
+    <li><a href="##">jQuery</a></li>
+    <li class="disabled"><a href="##">Responsive</a></li>
+</ul>
+
+<h3><strong>16.导航（垂直堆叠的导航）</strong></h3>
+制作垂直堆叠导航只需要在“nav-pills”的基础上添加一个“nav-stacked”类名即可
+<ul class="nav nav-pills nav-stacked">
+    <li class="active"><a href="##">Home</a></li>
+    <li><a href="##">CSS3</a></li>
+    <li><a href="##">Sass</a></li>
+    <li><a href="##">jQuery</a></li>
+    <li class="disabled"><a href="##">Responsive</a></li>
+</ul>
+<br />
+分隔线：只需要添加在导航项之间添加“li class=”nav-divider” /li”即可
+<ul class="nav nav-pills nav-stacked">
+    <li class="active"><a href="##">Home</a></li>
+    <li><a href="##">CSS3</a></li>
+    <li><a href="##">Sass</a></li>
+    <li><a href="##">jQuery</a></li>
+    <li class="nav-divider"></li>
+    <li class="disabled"><a href="##">Responsive</a></li>
+</ul>
+
+<h3><strong>17.自适应导航（使用）</strong></h3>
+自适应导航和前面使用“btn-group-justified”制作的自适应按钮组是一样的。
+只不过在制作自适应导航时更换了另一个类名“nav-justified”。
+当然他需要和“nav-tabs”或者“nav-pills”配合在一起使用<br>
+实现原理：列表（ul）上设置宽度为“100%”，然后每个菜单项(li)设置了“display:table-cell”，
+让列表项以模拟表格单元格的形式显示<br>
+自适应导航仅在浏览器视窗宽度大于768px才能按100%宽度显示。
+<ul class="nav nav-tabs nav-justified">
+    <li class="active"><a href="##">Home</a></li>
+    <li><a href="##">CSS3</a></li>
+    <li><a href="##">Sass</a></li>
+    <li><a href="##">jQuery</a></li>
+    <li><a href="##">Responsive</a></li>
+</ul>
+<br />
+<ul class="nav nav-pills nav-justified">
+    <li class="active"><a href="##">Home</a></li>
+    <li><a href="##">CSS3</a></li>
+    <li><a href="##">Sass</a></li>
+    <li><a href="##">jQuery</a></li>
+    <li><a href="##">Responsive</a></li>
+</ul>
+
+<h3><strong>18.导航加下拉菜单（二级导航）</strong></h3>
+只需要将li当作父容器，使用类名“dropdown”，同时在li中嵌套另一个列表ul<br>
+分割线：只需要添加“li class=”nav-divider” /li”这样的一个空标签就可以了。
+<ul class="nav nav-pills">
+    <li class="active"><a href="##">首页</a></li>
+    <li class="dropdown">
+        <a href="##" class="dropdown-toggle" data-toggle="dropdown">教程<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="##">CSS3</a></li>
+            <li><a href="##">Sass</a></li>
+            <li><a href="##">jQuery</a></li>
+            <li><a href="##">Responsive</a></li>
+        </ul>
+    </li>
+    <li><a href="##">关于我们</a></li>
+</ul>
+
+<h3><strong>19.面包屑式导航</strong></h3>
+<ol class="breadcrumb">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">我的书</a></li>
+    <li class="active">《图解CSS3》</li>
+</ol>
+</body>
+</html>

@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>首页</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>主页</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.0/css/bootstrap.css}" />
+
 </head>
 <body>
-这是首页
+    <div style="margin-left:550px;margin-top:50px;">
+        <h1>主页</h1>
+        <ol style="font-size: xx-large">
+            <li><a th:href="@{/home/homeAdmin}">管理页面</a></li>
+            <li><a th:href="@{/home/homeUser}">用户页面</a></li>
+            <li><a th:href="@{/user/list}">系统用户列表</a></li>
+        </ol>
+        <button onclick="window.location.href='/logout'" class="btn btn-secondary">退出</button>
+    </div>
 </body>
 </html>

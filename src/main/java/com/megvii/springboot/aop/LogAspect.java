@@ -24,6 +24,7 @@ public class LogAspect {
 
     @Pointcut("execution(public * com.megvii.springboot.controller..*.*(..))")
     public void log() {
+        log.info("****************自定义LogAspect切面****************");
     }
 
     @Before("log()")
@@ -35,18 +36,18 @@ public class LogAspect {
         HttpServletRequest request = attributes.getRequest();
 
         // 记录下请求内容
-        log.info("URL : " + request.getRequestURL().toString());
-        log.info("HTTP_METHOD : " + request.getMethod());
-        log.info("IP : " + request.getRemoteAddr());
-        log.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName()
-                + "." + joinPoint.getSignature().getName());
-        log.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));
+//        log.info("================URL================ : " + request.getRequestURL().toString());
+//        log.info("================HTTP_METHOD================ : " + request.getMethod());
+//        log.info("================IP================ : " + request.getRemoteAddr());
+//        log.info("================CLASS_METHOD================ : " + joinPoint.getSignature().getDeclaringTypeName()
+//                + "." + joinPoint.getSignature().getName());
+//        log.info("================ARGS================ : " + Arrays.toString(joinPoint.getArgs()));
     }
 
     @AfterReturning(returning = "ret", pointcut = "log()")
     public void doAfterReturning(Object ret) throws Throwable {
         // 处理完请求，返回内容
-        log.info("RESPONSE : " + ret);
-        log.info("SPEND TIME : " + (System.currentTimeMillis() - startTime.get()));
+//        log.info("================RESPONSE================ : " + ret);
+//        log.info("================SPEND TIME================ : " + (System.currentTimeMillis() - startTime.get()));
     }
 }
